@@ -1,18 +1,38 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router";
-import Layout from "./layout/layout";
 
-const root = document.getElementById("root");
 
-ReactDOM.createRoot(root).render(
-  <Routes>
-    <Route element={<Layout />}>
-      <Route index element={<Home />} />
-      <Route path="product" element={<Product />} />
-      <Route path="productdetails" element={<Pro />} />
-      <Route path="notfound" element={<Home />} />
-    </Route>
-    
-</Routes>
+import "./index.css";
+import Layout from "./layouts/Layout";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
+import NotFound from "./pages/NotFound";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+
+        <Route element={<Layout />}>
+
+          <Route index element={<Home />} />
+
+          <Route
+            path="products"
+            element={<Products />}
+          />
+
+          <Route
+            path="products/:id"
+            element={<ProductDetail />}
+          />
+
+          <Route
+            path="*"
+            element={<NotFound />}
+          />
+
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );
