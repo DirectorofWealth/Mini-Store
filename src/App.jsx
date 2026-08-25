@@ -1,9 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router";
+
 
 import "./index.css";
-
 import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
