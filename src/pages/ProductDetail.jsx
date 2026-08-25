@@ -2,18 +2,14 @@ import { Link, useNavigate, useParams } from "react-router";
 import { products } from "../data/products";
 
 function ProductDetail() {
-  // GET THE ID FROM THE URL
   const { id } = useParams();
 
-  // CREATE THE NAVIGATION FUNCTION
   const navigate = useNavigate();
 
-  // FIND THE PRODUCT MATCHING THE URL ID
   const product = products.find(
     (item) => item.id === Number(id)
   );
 
-  // HANDLE A PRODUCT THAT DOES NOT EXIST
   if (!product) {
     return (
       <section className="text-center">

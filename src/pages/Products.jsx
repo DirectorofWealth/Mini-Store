@@ -14,7 +14,6 @@ function Products() {
         </p>
       </div>
 
-      {/* PRODUCT GRID */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (
           <Link
@@ -22,14 +21,12 @@ function Products() {
             to={`/products/${product.id}`}
             className="overflow-hidden rounded-xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-lg"
           >
-            {/* PRODUCT IMAGE */}
             <img
               src={`https://picsum.photos/seed/${product.id}/400`}
               alt={product.name}
               className="h-48 w-full object-cover"
             />
 
-            {/* PRODUCT INFORMATION */}
             <div className="p-5">
               <h2 className="text-xl font-bold text-slate-900">
                 {product.name}
